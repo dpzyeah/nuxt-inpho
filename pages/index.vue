@@ -5,11 +5,7 @@
 </template>
 
 <script>
-  export default {
-    name: "IndexPage"
-  }
+export default {
+  name: 'AccueilPage',
+}
 </script>
-
-<style lang="scss" scoped>
-
-</style>

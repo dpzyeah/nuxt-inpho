@@ -1,3 +1,13 @@
+import axios from "axios"
+let dynamicRoutes = () => {
+  const routes = axios
+    .get("http://inpho.local/wp-json/wp/v2/portfolio?page=1&per_page=20")
+    .then(res => {
+      return res.data.map(post => `/portfolio/${post.slug}`)
+    })
+  return routes
+}
+
 export default {
   // Target: https://go.nuxtjs.dev/config-target
   target: 'static',
@@ -38,6 +48,7 @@ export default {
   modules: [
     // https://go.nuxtjs.dev/axios
     '@nuxtjs/axios',
+    
   ],
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
@@ -48,4 +59,9 @@ export default {
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {},
+
+  generate: {
+    routes: dynamicRoutes
+  }
+  
 }

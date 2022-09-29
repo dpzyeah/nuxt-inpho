@@ -1,5 +1,5 @@
 <template>
-    <nav>
+    <nav class="">
         <ul>
             <li><nuxt-link exact to="/">Accueil</nuxt-link></li>
             <li><nuxt-link to="/portfolio">Portfolio</nuxt-link></li>
